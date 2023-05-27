@@ -59,7 +59,7 @@ const ButtonsWrapper = styled.div`
 export default function Featured({product}) {
   const {addProduct} = useContext(CartContext);
   function addFeaturedToCart() {
-    addProduct(product._id);
+    addProduct(product?._id);
   }
   return (
     <Bg>
@@ -67,10 +67,10 @@ export default function Featured({product}) {
         <ColumnsWrapper>
           <Column>
             <div>
-              <Title>{product.title}</Title>
-              <Desc>{product.description}</Desc>
+              <Title>{product?.title}</Title>
+              <Desc>{product?.description}</Desc>
               <ButtonsWrapper>
-                <ButtonLink href={'/product/'+product._id} outline={1} white={1}>Read more</ButtonLink>
+                <ButtonLink href={'/product/'+product?._id} outline={1} white={1}>Read more</ButtonLink>
                 <Button white onClick={addFeaturedToCart}>
                   <CartIcon />
                   Add to cart
@@ -79,7 +79,7 @@ export default function Featured({product}) {
             </div>
           </Column>
           <Column>
-            <img src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png" alt=""/>
+            <img src="https://images.complex.com/complex/image/upload/c_crop,h_1038,w_1771,x_136,y_81/c_fill,dpr_auto,f_auto,fl_lossy,g_face,q_auto,w_1280/lfxqobermljabnsxvgtg.png" alt=""/>
           </Column>
         </ColumnsWrapper>
       </Center>
